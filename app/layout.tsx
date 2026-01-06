@@ -16,26 +16,26 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Math Ehak | Full Stack Developer",
-    template: "%s | Math Ehak",
+    default: "Ehak Math | Full Stack Developer",
+    template: "%s | Ehak Math",
   },
   description: "Full Stack Developer specializing in modern web applications with React, Next.js, and TypeScript. Building digital experiences that matter.",
   keywords: ["developer", "portfolio", "react", "nextjs", "typescript", "full stack"],
-  authors: [{ name: "Math Ehak" }],
-  creator: "Math Ehak",
+  authors: [{ name: "Ehak Math" }],
+  creator: "Ehak Math",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://alexchen.dev",
-    siteName: "Math Ehak Portfolio",
-    title: "Math Ehak | Full Stack Developer",
+    siteName: "Ehak Math Portfolio",
+    title: "Ehak Math | Full Stack Developer",
     description: "Full Stack Developer specializing in modern web applications with React, Next.js, and TypeScript.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Math Ehak | Full Stack Developer",
+    title: "Ehak Math | Full Stack Developer",
     description: "Full Stack Developer specializing in modern web applications with React, Next.js, and TypeScript.",
-    creator: "@mathehak",
+    creator: "@ehakmath",
   },
   robots: {
     index: true,
