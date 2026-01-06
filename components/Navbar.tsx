@@ -45,7 +45,7 @@ export default function Navbar() {
             {/* Logo */}
             <Link href="/" className="relative group">
               <span className="text-xl font-bold text-foreground">
-                Math<span className="text-primary">.</span>
+                Ehak<span className="text-primary">.</span>
               </span>
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
             </Link>
