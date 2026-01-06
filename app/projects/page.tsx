@@ -92,7 +92,7 @@ export default function ProjectsPage() {
                 </AnimatedSection>
                 
                 <AnimatedSection delay={0.3} className="text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">6+</div>
+                  <div className="text-4xl font-bold text-primary mb-2">3+</div>
                   <div className="text-muted-foreground text-sm">Years Experience</div>
                 </AnimatedSection>
                 

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Github, ExternalLink, Folder } from "lucide-react";
@@ -9,7 +10,7 @@ interface Project {
   id: number;
   title: string;
   description: string;
-  image: string;
+  image?: string;
   technologies: string[];
   github: string;
   demo: string;
@@ -22,6 +23,12 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project, index }: ProjectCardProps) {
+  const [imageError, setImageError] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+  
+  const showImage = project.image && !imageError;
+  const showPlaceholder = !project.image || imageError || !imageLoaded;
+
   return (
     <motion.article
       initial={{ opacity: 0, y: 30 }}
@@ -33,11 +40,31 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       {/* Image Container */}
       <div className="relative h-48 sm:h-56 overflow-hidden bg-secondary">
         <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent z-10" />
-        <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
-          <Folder className="w-16 h-16 opacity-20" />
-        </div>
-        {/* Placeholder for actual project image */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/50" />
+        
+        {/* Show actual image if available */}
+        {showImage && (
+          <Image
+            src={project.image!}
+            alt={project.title}
+            fill
+            className={`object-cover transition-all duration-500 group-hover:scale-110 ${
+              imageLoaded ? "opacity-100" : "opacity-0"
+            }`}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            onLoad={() => setImageLoaded(true)}
+            onError={() => setImageError(true)}
+          />
+        )}
+        
+        {/* Fallback placeholder (shows when no image or image fails to load) */}
+        {showPlaceholder && (
+          <>
+            <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
+              <Folder className="w-16 h-16 opacity-20" />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/50" />
+          </>
+        )}
         
         {/* Hover overlay with links */}
         <div className="absolute inset-0 bg-foreground/80 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">

@@ -1,6 +1,7 @@
 import {
   SiReact,
   SiNextdotjs,
+  SiNuxtdotjs,
   SiTypescript,
   SiTailwindcss,
   SiFramer,
@@ -51,6 +52,11 @@ import {
   SiNotion,
   SiSlack,
   SiDiscord,
+  SiDart,
+  SiApifox,
+  SiGithub,
+  SiTelegram,
+  SiBlockbench
 } from "react-icons/si";
 import { 
   FaJava,
@@ -112,6 +118,7 @@ const techIconMap: Record<string, React.ComponentType<IconBaseProps>> = {
   "Rust": FaRust,
   "Go": FaGolang,
   "Golang": FaGolang,
+  "Nuxt.js": SiNuxtdotjs,
   
   // Databases
   "PostgreSQL": SiPostgresql,
@@ -129,6 +136,7 @@ const techIconMap: Record<string, React.ComponentType<IconBaseProps>> = {
   "Figma": SiFigma,
   "CI/CD": SiGithubactions,
   "GitHub Actions": SiGithubactions,
+  "GitHub": SiGithub,
   "Webpack": SiWebpack,
   "Vercel": SiVercel,
   "Linux": SiLinux,
@@ -162,6 +170,10 @@ const techIconMap: Record<string, React.ComponentType<IconBaseProps>> = {
   // Mobile
   "Flutter": SiFlutter,
   "React Native": SiReact,
+  "Dart": SiDart,
+  
+  // API Tools
+  "REST API": SiApifox,
   
   // CMS
   "WordPress": FaWordpress,
@@ -175,6 +187,7 @@ const techIconMap: Record<string, React.ComponentType<IconBaseProps>> = {
 // Color map for each technology (for colored mode)
 const techColorMap: Record<string, string> = {
   "React": "#61DAFB",
+  "Telegram": "#0088cc",
   "Next.js": "#000000",
   "TypeScript": "#3178C6",
   "JavaScript": "#F7DF1E",

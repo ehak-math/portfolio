@@ -5,26 +5,27 @@ import PageTransition from "@/components/PageTransition";
 import Timeline from "@/components/Timeline";
 import { SkillTag } from "@/components/SkillBar";
 import { siteConfig, skills, experience, education } from "@/lib/data";
-import { 
-  Download, 
-  Briefcase, 
-  GraduationCap, 
-  Code, 
-  Server, 
+import {
+  Download,
+  Briefcase,
+  GraduationCap,
+  Code,
+  Server,
   Wrench,
-  ExternalLink
+  ExternalLink,
 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Resume",
-  description: "View and download Alex Chen's professional resume. Full Stack Developer with expertise in React, Next.js, and modern web technologies.",
+  description:
+    "View and download Alex Chen's professional resume. Full Stack Developer with expertise in React, Next.js, and modern web technologies.",
 };
 
 export default function ResumePage() {
   const allSkills = [
-    ...skills.frontend.map(s => s.name),
-    ...skills.backend.map(s => s.name),
-    ...skills.tools.map(s => s.name),
+    ...skills.frontend.map((s) => s.name),
+    ...skills.backend.map((s) => s.name),
+    ...skills.tools.map((s) => s.name),
   ];
 
   return (
@@ -36,11 +37,15 @@ export default function ResumePage() {
             <div className="max-w-4xl mx-auto">
               <AnimatedSection className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
                 <div>
-                  <span className="text-primary font-medium mb-4 block">Resume</span>
+                  <span className="text-primary font-medium mb-4 block">
+                    Resume
+                  </span>
                   <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
                     {siteConfig.name}
                   </h1>
-                  <p className="text-xl text-muted-foreground">{siteConfig.role}</p>
+                  <p className="text-xl text-muted-foreground">
+                    {siteConfig.role}
+                  </p>
                 </div>
                 <a
                   href={siteConfig.resumeUrl}
@@ -59,14 +64,14 @@ export default function ResumePage() {
                     {siteConfig.location}
                   </span>
                   <span className="hidden sm:block text-border">|</span>
-                  <a 
+                  <a
                     href={`mailto:${siteConfig.email}`}
                     className="text-sm text-primary hover:underline"
                   >
                     {siteConfig.email}
                   </a>
                   <span className="hidden sm:block text-border">|</span>
-                  <a 
+                  <a
                     href={siteConfig.social.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -76,7 +81,7 @@ export default function ResumePage() {
                     <ExternalLink className="w-3 h-3" />
                   </a>
                   <span className="hidden sm:block text-border">|</span>
-                  <a 
+                  <a
                     href={siteConfig.social.github}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -101,11 +106,14 @@ export default function ResumePage() {
                     Professional Summary
                   </h2>
                   <p className="text-muted-foreground leading-relaxed">
-                    {siteConfig.description} With over 6 years of experience in web development,
-                    I bring expertise in modern JavaScript frameworks, particularly React and Next.js,
-                    along with strong backend skills in Node.js and Python. I thrive in collaborative
-                    environments and am passionate about delivering high-quality code and exceptional
-                    user experiences.
+                    {siteConfig.description} With a strong foundation in both
+                    frontend and backend technologies, I excel at building
+                    full-stack applications that are not only visually appealing
+                    but also robust and scalable. My expertise includes React,
+                    Next.js, Node.js, and various database systems. I am
+                    passionate about writing clean, maintainable code and
+                    continuously improving my skills to stay updated with the
+                    latest industry trends.
                   </p>
                 </div>
               </AnimatedSection>
@@ -134,7 +142,11 @@ export default function ResumePage() {
                     </h3>
                     <div className="flex flex-wrap gap-2">
                       {skills.frontend.map((skill, index) => (
-                        <SkillTag key={skill.name} name={skill.name} index={index} />
+                        <SkillTag
+                          key={skill.name}
+                          name={skill.name}
+                          index={index}
+                        />
                       ))}
                     </div>
                   </div>
@@ -149,7 +161,11 @@ export default function ResumePage() {
                     </h3>
                     <div className="flex flex-wrap gap-2">
                       {skills.backend.map((skill, index) => (
-                        <SkillTag key={skill.name} name={skill.name} index={index} />
+                        <SkillTag
+                          key={skill.name}
+                          name={skill.name}
+                          index={index}
+                        />
                       ))}
                     </div>
                   </div>
@@ -164,7 +180,11 @@ export default function ResumePage() {
                     </h3>
                     <div className="flex flex-wrap gap-2">
                       {skills.tools.map((skill, index) => (
-                        <SkillTag key={skill.name} name={skill.name} index={index} />
+                        <SkillTag
+                          key={skill.name}
+                          name={skill.name}
+                          index={index}
+                        />
                       ))}
                     </div>
                   </div>
@@ -210,13 +230,17 @@ export default function ResumePage() {
                           <h3 className="text-lg font-semibold text-card-foreground">
                             {edu.degree}
                           </h3>
-                          <p className="text-primary font-medium">{edu.school}</p>
+                          <p className="text-primary font-medium">
+                            {edu.school}
+                          </p>
                         </div>
                         <div className="text-sm text-muted-foreground shrink-0">
                           {edu.period}
                         </div>
                       </div>
-                      <p className="text-sm text-muted-foreground">{edu.description}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {edu.description}
+                      </p>
                     </div>
                   </AnimatedSection>
                 ))}
@@ -234,7 +258,8 @@ export default function ResumePage() {
                   Interested in working together?
                 </h3>
                 <p className="text-muted-foreground mb-6">
-                  I&apos;m always open to discussing new opportunities and interesting projects.
+                  I&apos;m always open to discussing new opportunities and
+                  interesting projects.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <Link

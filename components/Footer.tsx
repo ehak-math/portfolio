@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Github, Linkedin, Twitter, Mail, Heart } from "lucide-react";
+import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { SiTelegram } from "react-icons/si";
 import { siteConfig } from "@/lib/data";
 
 export default function Footer() {
@@ -73,13 +74,13 @@ export default function Footer() {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href={siteConfig.social.twitter}
+                href={siteConfig.social.telegram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
-                aria-label="Twitter"
+                aria-label="Telegram"
               >
-                <Twitter className="w-5 h-5" />
+                <SiTelegram className="w-5 h-5" />
               </a>
               <a
                 href={`mailto:${siteConfig.email}`}

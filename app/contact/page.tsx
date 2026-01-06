@@ -3,11 +3,12 @@ import AnimatedSection from "@/components/AnimatedSection";
 import PageTransition from "@/components/PageTransition";
 import ContactForm from "@/components/ContactForm";
 import { siteConfig } from "@/lib/data";
-import { Mail, MapPin, Github, Linkedin, Twitter, Clock, Send } from "lucide-react";
+import { Mail, MapPin, Github, Linkedin, Clock, Send } from "lucide-react";
+import { SiTelegram } from "react-icons/si";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Get in touch with Alex Chen. Let's discuss your project or just say hello!",
+  description: "Get in touch with Ehak Math. Let's discuss your project or just say hello!",
 };
 
 export default function ContactPage() {
@@ -118,13 +119,13 @@ export default function ContactPage() {
                       <Linkedin className="w-5 h-5" />
                     </a>
                     <a
-                      href={siteConfig.social.twitter}
+                      href={siteConfig.social.telegram}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="p-3 bg-card rounded-lg border border-border text-muted-foreground hover:text-foreground hover:border-primary/50 transition-all"
-                      aria-label="Twitter"
+                      aria-label="Telegram"
                     >
-                      <Twitter className="w-5 h-5" />
+                      <SiTelegram className="w-5 h-5" />
                     </a>
                   </div>
                 </AnimatedSection>
