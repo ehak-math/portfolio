@@ -6,6 +6,12 @@ export const siteConfig = {
   description: "I craft modern web applications with clean code and thoughtful design. Passionate about creating performant, accessible, and user-friendly solutions.",
   email: "ehakmath@gmail.com",
   location: "Phnom Penh, Cambodia",
+  // Profile image - place your image in /public/images/ folder
+  profileImage: "/images/profile.jpg",
+  // Open Graph image for social sharing (recommended: 1200x630px)
+  ogImage: "/images/og-image.jpg",
+  // Website URL (for SEO and social sharing)
+  siteUrl: "https://portfolio.ehakmath.codes/",
   social: {
     github: "https://github.com/ehak-math",
     linkedin: "https://linkedin.com/in/mathehak",

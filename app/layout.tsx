@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import ClientLayout from "@/components/ClientLayout";
+import { siteConfig } from "@/lib/data";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,26 +16,36 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.siteUrl),
   title: {
-    default: "Ehak Math | Full Stack Developer",
-    template: "%s | Ehak Math",
+    default: `${siteConfig.name} | ${siteConfig.role}`,
+    template: `%s | ${siteConfig.name}`,
   },
-  description: "Full Stack Developer specializing in modern web applications with React, Next.js, and TypeScript. Building digital experiences that matter.",
-  keywords: ["developer", "portfolio", "react", "nextjs", "typescript", "full stack"],
-  authors: [{ name: "Ehak Math" }],
-  creator: "Ehak Math",
+  description: siteConfig.description,
+  keywords: ["developer", "portfolio", "react", "nextjs", "typescript", "full stack", siteConfig.name],
+  authors: [{ name: siteConfig.name }],
+  creator: siteConfig.name,
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://alexchen.dev",
-    siteName: "Ehak Math Portfolio",
-    title: "Ehak Math | Full Stack Developer",
-    description: "Full Stack Developer specializing in modern web applications with React, Next.js, and TypeScript.",
+    url: siteConfig.siteUrl,
+    siteName: `${siteConfig.name} Portfolio`,
+    title: `${siteConfig.name} | ${siteConfig.role}`,
+    description: siteConfig.description,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.name,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ehak Math | Full Stack Developer",
-    description: "Full Stack Developer specializing in modern web applications with React, Next.js, and TypeScript.",
+    title: `${siteConfig.name} | ${siteConfig.role}`,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
     creator: "@ehakmath",
   },
   robots: {

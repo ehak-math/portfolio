@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Github, Linkedin, ChevronDown } from "lucide-react";
 import { siteConfig } from "@/lib/data";
@@ -28,12 +29,36 @@ export default function Hero() {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto mt-5 text-center">
+          
+          {/* Profile Image */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="mb-8"
+          >
+            <div className="relative w-32 h-32 sm:w-40 sm:h-40 mx-auto">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary/50 rounded-full blur-lg opacity-50" />
+              <div className="relative w-full h-full rounded-full border-4 border-background shadow-2xl overflow-hidden bg-secondary">
+                <Image
+                  src={siteConfig.profileImage}
+                  alt={siteConfig.name}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+              {/* Status indicator */}
+              <div className="absolute bottom-2 right-2 w-5 h-5 bg-green-500 rounded-full border-4 border-background" title="Available for work" />
+            </div>
+          </motion.div>
+
           {/* Greeting */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
             className="text-primary font-medium mb-4"
           >
             Hello, I&apos;m
@@ -43,7 +68,7 @@ export default function Hero() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-4"
           >
             {siteConfig.name}
@@ -53,7 +78,7 @@ export default function Hero() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
             className="text-xl sm:text-2xl md:text-3xl text-muted-foreground font-medium mb-6"
           >
             {siteConfig.role}
@@ -63,7 +88,7 @@ export default function Hero() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
             className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8"
           >
             {siteConfig.description}
@@ -73,7 +98,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
           >
             <Link
