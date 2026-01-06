@@ -12,7 +12,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <Link href="/" className="text-xl font-bold text-foreground">
-              Math<span className="text-primary">.</span>
+              Ehak<span className="text-primary">.</span>
             </Link>
             <p className="text-muted-foreground text-sm max-w-xs">
               {siteConfig.tagline}. Let&apos;s build something amazing together.
