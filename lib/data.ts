@@ -9,7 +9,7 @@ export const siteConfig = {
   email: "ehakmath@gmail.com",
   location: "Phnom Penh, Cambodia",
   // Profile image - place your image in /public/images/ folder
-  profileImage: "/images/profile.jpg",
+  profileImage: "/images/profile.png",
   // Open Graph image for social sharing (recommended: 1200x630px)
   ogImage: "/images/og-image.jpg",
   // Website URL (for SEO and social sharing)

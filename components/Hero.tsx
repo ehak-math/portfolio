@@ -5,8 +5,17 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Github, Linkedin, ChevronDown } from "lucide-react";
 import { siteConfig } from "@/lib/data";
+import Typewriter from "./Typewriter";
 
 export default function Hero() {
+  // Roles to cycle through
+  const roles = [
+    "Full Stack Developer",
+    "Mobile App Developer",
+    "UI/UX Enthusiast",
+    "Problem Solver",
+  ];
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background gradient */}
@@ -64,24 +73,31 @@ export default function Hero() {
             Hello, I&apos;m
           </motion.p>
 
-          {/* Name */}
+          {/* Name with gradient */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-4"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4"
           >
-            {siteConfig.name}
+            <span className="bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent">
+              {siteConfig.name}
+            </span>
           </motion.h1>
 
-          {/* Role */}
+          {/* Role with Typewriter Effect */}
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-xl sm:text-2xl md:text-3xl text-muted-foreground font-medium mb-6"
+            className="text-xl sm:text-2xl md:text-3xl text-muted-foreground font-medium mb-6 h-10 sm:h-12"
           >
-            {siteConfig.role}
+            <Typewriter 
+              texts={roles}
+              typingSpeed={80}
+              deletingSpeed={40}
+              pauseDuration={2500}
+            />
           </motion.h2>
 
           {/* Tagline */}
@@ -148,17 +164,14 @@ export default function Hero() {
       {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 0.5 }}
+        animate={{ opacity: 1, y: [0, 10, 0] }}
+        transition={{ 
+          opacity: { delay: 1, duration: 0.5 },
+          y: { delay: 1, duration: 1.5, repeat: Infinity }
+        }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
       >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-          className="text-muted-foreground"
-        >
-          <ChevronDown className="w-6 h-6" />
-        </motion.div>
+        <ChevronDown className="w-6 h-6 text-muted-foreground" />
       </motion.div>
     </section>
   );
